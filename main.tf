@@ -59,7 +59,7 @@ resource "aws_instance" "netology_for_each" {
   // из какого образа создать инстанс
   ami = data.aws_ami.ubuntu.id
   // тип инстанса
-  instance_type = t3.micro
+  instance_type = "t3.micro"
   
   // имя и внутренний ip назначим согласно массиву instances_count
   tags = {
