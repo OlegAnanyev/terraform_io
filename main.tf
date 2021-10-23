@@ -31,26 +31,12 @@ resource "aws_instance" "netology" {
   instance_type = "t3.micro"
   count = 2
 
-
-  // хотим строго 1 ядро
-  cpu_core_count = 1
-  // и без hyperthreading
-  cpu_threads_per_core = 1
-  // защита от удаления инстанса по API не требуется
-  disable_api_termination = false
-  // при завершении работы инстанса не удалять его полностью, а просто останавливать
-  instance_initiated_shutdown_behavior = "stop"
-  // расширенный мониторинг не требуется
-  monitoring = false
-  // присвоить инстансу публичный ip-адрес
   associate_public_ip_address = true
-  // следить, проходит ли сетевой трафик на инстанс
-  source_dest_check = true
+
   // назначим тэг
   tags = {
-    Name = "${terraform.workspace}_Hello_Netology"
+    Name = "${terraform.workspace}_Diplom_Netology"
   }
-
 }
 
 resource "aws_instance" "netology_for_each" {
