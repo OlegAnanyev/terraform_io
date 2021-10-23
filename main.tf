@@ -35,6 +35,7 @@ resource "aws_security_group" "forwarder" {
 #}
 
 resource "aws_instance" "instance" {
+  count = 2
   subnet_id     = "subnet-04393788dce09388a"
   ami           = data.aws_ami.ubuntu.id
   #key_name      = "${aws_key_pair.key.key_name}"
