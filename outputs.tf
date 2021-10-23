@@ -1,3 +1,12 @@
+//приватный ip
+output "private_ip" {
+ value = aws_instance.diplom_instance.*.private_ip
+}
+//публичный ip
+output "public_ip" {
+ value = aws_instance.diplom_instance.*.public_ip
+}
+
 # //id аккаунта
 # output "account_id" {
 #   value = data.aws_caller_identity.current.account_id
@@ -16,15 +25,6 @@
 #   value = data.aws_caller_identity.current.arn
 # }
 
-
-# //приватный ip
-# output "private_ip" {
-#   value = aws_instance.netology.*.private_ip
-# }
-# //публичный ip
-# output "public_ip" {
-#   value = aws_instance.netology.*.public_ip
-# }
 # //id подсети
 # output "subnet_id" {
 #   value = aws_instance.netology.*.subnet_id
