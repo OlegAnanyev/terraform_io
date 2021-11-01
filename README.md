@@ -1,2 +1,2 @@
 # terraform_io
-Repository for terraform.io tests
+Repository for my diploma project
