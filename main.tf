@@ -50,10 +50,10 @@ resource "aws_security_group" "diplom_sec_group"{
   }
 
   ingress {
-    from_port = 80
-    protocol = "tcp"
-    to_port = 80
-    cidr_blocks = ["0.0.0.0/0"]
+    from_port = 0
+    protocol = "-1"
+    to_port = 0
+    cidr_blocks = ["10.0.101.0/24"]
   }
 
   ingress {
@@ -62,6 +62,27 @@ resource "aws_security_group" "diplom_sec_group"{
     to_port = 22
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  ingress {
+    from_port = 80
+    protocol = "tcp"
+    to_port = 80
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port = 30000
+    protocol = "tcp"
+    to_port = 30000
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port = 30001
+    protocol = "tcp"
+    to_port = 30001
+    cidr_blocks = ["0.0.0.0/0"]
+  }  
 }
 
 
